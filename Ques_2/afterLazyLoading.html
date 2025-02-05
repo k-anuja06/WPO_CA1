@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After Lazy Loading</title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        .lazy-background {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            background-color: #cccccca3;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>After Lazy Loading</h1>
+
+    <img src="./assets/mountain.jpg" loading="lazy" alt="Mountains">
+    <img src="./assets/ocean.jpeg" loading="lazy" alt="Ocean">
+    <img src="./assets/forest.jpeg" loading="lazy" alt="Forest">
+    <img src="./assets/nature.jpg" loading="lazy" alt="nature">
+
+    <div class="lazy-background" data-bg="url('./assets/mountain.jpg')"></div>
+    <div class="lazy-background" data-bg="url('./assets/ocean.jpeg')"></div>
+    <div class="lazy-background" data-bg="url('./assets/forest.jpeg')"></div>
+    <div class="lazy-background" data-bg="url('./assets/nature.jpg')"></div>
+
+    <script>
+        const lazyBackgrounds = document.querySelectorAll('.lazy-background');
+
+        const loadLazyBackgrounds = () => {
+            lazyBackgrounds.forEach((element) => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    const bg = element.getAttribute('data-bg');
+                    element.style.backgroundImage = bg;
+                    element.classList.remove('lazy-background');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', loadLazyBackgrounds);
+        window.addEventListener('load', loadLazyBackgrounds);
+    </script>
+</body>
+</html>

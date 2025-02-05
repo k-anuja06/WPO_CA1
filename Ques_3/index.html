@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="./assets/1.jpeg" alt="Image 1">
+        <img src="assets/2.jpg" alt="Image 2">
+        <img src="assets/3.jpg" alt="Image 3">
+        <img src="assets/4.jpg" alt="Image 4">
+        <img src="assets/5.jpg" alt="Image 5">
+        <img src="assets/6.jpeg" alt="Image 6">
+        <img src="assets/7.jpg" alt="Image 7">
+        <img src="assets/8.jpg" alt="Image 8">
+        <img src="assets/9.jpg" alt="Image 9">
+        <img src="assets/10.jpg" alt="Image 10">
+        <img src="assets/11.jpg" alt="Image 11">
+        <img src="assets/12.jpg" alt="Image 12">
+        <img src="assets/13.jpg" alt="Image 13">
+        <img src="assets/14.jpeg" alt="Image 14">
+        <img src="assets/15.png" alt="Image 15">
+        <img src="assets/16.jpeg" alt="Image 16">
+        <img src="assets/17.jpg" alt="Image 17">
+        <img src="assets/18.jpg" alt="Image 18">
+        <img src="assets/19.jpg" alt="Image 19">
+        <img src="assets/20.jpg" alt="Image 20">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With Image Sprite (Left to Right)</title>
+    <style>
+        .icon {
+            width: 128px;
+            height: 128px;
+            background: url('./assets/sprites.png') no-repeat;
+            display: inline-block;
+        }
+
+        .facebook  { background-position: -10px -10px; }
+        .linkedin  { background-position: -158px -10px; }
+        .twitter   { background-position: -306px -10px; }
+    </style>
+</head>
+<body>
+    <h1>After Sprite</h1>
+    <div class="icon facebook"></div>
+    <div class="icon linkedin"></div>
+    <div class="icon twitter"></div>
+    
+</body>
+</html>
